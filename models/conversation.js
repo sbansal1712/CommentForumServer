@@ -7,14 +7,18 @@ const ConversationSchema = new mongoose.Schema(
     
     ConversationTitle: { type: String },
     username : {type : String},
+    createdOn : {type : Date},
     Responses : [
       {
-        comment : {type : String},
-        
         username : {type : String, ref : Mst_User},
+        comment : {type : String},
+        createdOn : {type : Date},
+        
         Replies : [{
           username : {type : String, ref : Mst_User},
-          comment :  {type : String}
+          comment :  {type : String},
+          createdOn : {type : Date},
+
         }]
       }
     ]
